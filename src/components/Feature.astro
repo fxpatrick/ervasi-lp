@@ -1,0 +1,133 @@
+---
+
+---
+
+<div class="max-w-7xl mx-auto flex flex-col justify-center items-center mt-32 px-8">
+    <span class="text-gray-800 font-bold text-4xl"
+        >Support to drive your rental business forward</span
+    >
+
+    <div class="w-full mx-auto mt-4 text-gray-500">
+        <ul
+            id="tabs"
+            class="md:inline-flex p-2 w-full items-center justify-center space-x-8 hidden"
+        >
+            <li
+                class="p-2 cursor-pointer active rounded-full bg-gray-200 border-2 border-gray-400 text-gray-900"
+                tab-to="first"
+            >
+                Multiple properties
+            </li>
+            <li class="p-2 cursor-pointer" tab-to="second">
+                Informative dashboard
+            </li>
+            <li class="p-2 cursor-pointer" tab-to="third">Easy setup</li>
+            <li class="p-2 cursor-pointer" tab-to="four">No commission fee</li>
+            <li class="p-2 cursor-pointer" tab-to="five">Customer POV Calendar</li>
+        </ul>
+
+        <div id="tab-contents">
+            <div class="p-4 active" tab-id="first">
+				<div class="max-w-7xl mx-auto flex-col md:flex md:flex-row mt-16 md:space-x-16 text-gray-800">
+					<div class="flex flex-col justify-center items-start w-full md:w-1/2 space-y-8 h-96">
+						<h3 class="text-4xl font-bold">Multiple properties</h3>
+						<p>Ervasi offers a centralized software that allows you to streamline your property management tasks. From handling bookings, reservations, and guest inquiries to managing property listings and availability, Ervasi provides a centralized point of view for multiple properties. No more jumping between platforms or losing track of important details.</p>
+					</div>
+					<div class="flex justify-center items-center ">
+						<img src="../../public/feature-01.svg" alt="" class="w-full h-full">
+					</div>
+				</div>
+			</div>
+            <div class="p-4 md:hidden" tab-id="second">
+				<div class="max-w-7xl mx-auto flex-col md:flex md:flex-row mt-16 md:space-x-16 text-gray-800">
+					<div class="flex flex-col justify-center items-start w-full md:w-1/2 space-y-8 h-96">
+						<h3 class="text-4xl font-bold">Informative dashboard</h3>
+						<p>Ervasi's powerful dashboard provides you with a comprehensive overview of your business. Track your bookings, monitor occupancy rates, and analyze performance metrics to make informed decisions and drive your business growth. With Ervasi, you can focus on moving the needle and making progress with your business.</p>
+					</div>
+					<div class="flex justify-center items-center ">
+						<img src="../../public/feature-02.svg" alt="" class="w-full h-full">
+					</div>
+				</div>
+			</div>
+            <div class="p-4 md:hidden" tab-id="third">
+				<div class="max-w-7xl mx-auto flex-col md:flex md:flex-row mt-16 md:space-x-16 text-gray-800">
+					<div class="flex flex-col justify-center items-start w-full md:w-1/2 space-y-8 h-96">
+						<h3 class="text-4xl font-bold">Easy setup</h3>
+						<p>We understand that time is precious, especially when it comes to setting up a new property management system. That's why Ervasi offers a quick and hassle-free setup process. Registering and adding your first property takes less than 15 minutes, allowing you to hit the ground running and start maximizing your property's potential.</p>
+					</div>
+					<div class="flex justify-center items-center ">
+						<img src="../../public/feature-03.svg" alt="" class="w-full h-full">
+					</div>
+				</div>
+			</div>
+            <div class="p-4 md:hidden" tab-id="four">
+				<div class="max-w-7xl mx-auto flex-col md:flex md:flex-row mt-16 md:space-x-16 text-gray-800">
+					<div class="flex flex-col justify-center items-start w-full md:w-1/2 space-y-8 h-96">
+						<h3 class="text-4xl font-bold">No commission fee</h3>
+						<p>Unlike traditional booking platforms that charge hefty commission fees to both owners and customers, Ervasi believes in a fair and transparent approach. We offer a new way to book properties without any commission fees, ensuring that owners get to keep more of their hard-earned income while providing customers with a cost-effective solution.</p>
+					</div>
+					<div class="flex justify-center items-center ">
+						<img src="../../public/feature-04.svg" alt="" class="w-full h-full">
+					</div>
+				</div>
+			</div>
+
+            <div class="p-4 md:hidden" tab-id="five">
+				<div class="max-w-7xl mx-auto flex-col md:flex md:flex-row mt-16 md:space-x-16 text-gray-800">
+					<div class="flex flex-col justify-center items-start w-full md:w-1/2 space-y-8 h-96">
+						<h3 class="text-4xl font-bold">Customer POV Calendar</h3>
+						<p>At Ervasi, we understand the importance of effective marketing for property owners. That's why we've made it easy for your prospective customer to see the availability of your property. Simply add a photo of your property to your social media accounts and put link to ervasi profile in the bio. This customer-oriented calendar allows people to book directly with Ervasi, eliminating unnecessary steps and providing a seamless booking experience.</p>
+					</div>
+					<div class="flex justify-center items-center">
+						<img src="../../public/feature-05.png" alt="" class="w-full h-full">
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll("#tabs [tab-to]").forEach(function (item) {
+        item.addEventListener("click", function (e) {
+            let link = this.getAttribute("tab-to");
+            let active_content = document.querySelector(
+                "#tab-contents .active"
+            );
+            let tab_el = document.querySelector(
+                '#tab-contents [tab-id="' + link + '"]'
+            );
+            let active_tab = document.querySelector("#tabs .active");
+
+            active_content.classList.remove("active");
+            active_content.classList.add("hidden");
+
+            tab_el.classList.remove("hidden");
+            tab_el.classList.remove("md:hidden");
+            tab_el.classList.add("active");
+
+            active_tab.classList.remove(
+                "active",
+                "rounded-full",
+                "bg-gray-200",
+                "text-gray-900",
+                "border-2",
+                "border-gray-400",
+                "-mb-2",
+                "font-bold",
+                "bg-white"
+            );
+            this.classList.add(
+                "active",
+                "rounded-full",
+                "bg-gray-200",
+                "text-gray-900",
+                "border-2",
+                "border-gray-400",
+                "-mb-2",
+                "font-bold",
+                "bg-white"
+            );
+        });
+    });
+</script>
